@@ -34,7 +34,7 @@
         </div>
         <div class="profile-section">
           <!-- 이미지가 있을 경우 src 속성에 이미지 경로를 넣으세요 -->
-          <img class="profile-img" src="https://github.com/kimeunmi82/oz_assignment/blob/main/day1/photo.png?raw=true" alt="프로필 이미지">
+          <img class="profile-img" src="./photo/photo.png" alt="김은미 프로필 사진">
         </div>
       </header>
 
@@ -434,13 +434,15 @@
             <h3>흡연 여부 데이터 분석</h3>
             <p>2026.04~2026.04</p>
             <p>흡연여부 데이터 분석을 통해 건강 인사이트를 도출하는 프로젝트<br/>
-              <a id="backoffice_docs" target="_blank" href="./document/폐렴환자관리_백오피스.pdf">폐렴환자관리_백오피스.pdf</a>
+              <a id="backoffice_docs" target="_blank" href="./document/흡연여부_데이터분석.pdf">[문서]흡연여부_데이터분석</a>
             </p>
           </div>
           <div class="portfolio-card">
             <h3>[해커톤] 난임 환자 대상 임신 성공 여부 예측 AI 모델 개발</h3>
             <p>2026.05~2026.05</p>
-            <p>난임 환자 데이터를 분석하여 임신 성공에 영향을 미치는 주요 요인을 도출하고, 정확한 예측을 위한 최적의 AI 모델을 개발하는 프로젝트</p>
+            <p>난임 환자 데이터를 분석하여 임신 성공에 영향을 미치는 주요 요인을 도출하고, 정확한 예측을 위한 최적의 AI 모델을 개발하는 프로젝트<br/>
+              <a id="infertility_docs" target="_blank" href="./document/난임예측.pdf">[문서]난임예측</a>
+            </p>
           </div>
 
           <div class="portfolio-card">
@@ -452,8 +454,8 @@
             <h3>폐렴 환자 관리 백오피스 구축</h3>
             <p>2026.07~2026.07</p>
             <p>흉부 X-Ray 이미지 기반의 폐렴 판독 모델을 활용한 '폐렴 환자 관리 백오피스' 구축 프로젝트<br/>
-            <a id="backoffice" target="_blank" href="https://github.com/kimeunmi82/Oz_codingSchool">폐렴 환자 관리 백오피스</a><br/>
-            <a id="backoffice_docs" target="_blank" href="./document/폐렴환자관리_백오피스.pdf">폐렴환자관리_백오피스.pdf</a><br/>
+            <a id="backoffice" target="_blank" href="https://github.com/kimeunmi82/Oz_codingSchool">[Git]폐렴환자관리_백오피스</a><br/>
+            <a id="backoffice_docs" target="_blank" href="./document/폐렴환자관리_백오피스.pdf">[문서]폐렴환자관리_백오피스</a><br/>
             </p>
           </div>
 
@@ -461,7 +463,7 @@
             <h3>[해커톤] 암환자 유전체 데이터의 변이 정보를 활용한 암종 분류 AI 모델 개발</h3>
             <p>2026.08~2026.08</p>
             <p>유전자 변이 정보 기반 암 아형(서브타입) 예측 AI 알고리즘 개발<br/>
-              <a id="hackathon_cancer" target="_blank" href="./document/유전자 변이 기반 암종 분류.pdf">유전자 변이 기반 암종 분류.pdf</a>
+              <a id="hackathon_cancer" target="_blank" href="./document/유전자 변이 기반 암종 분류.pdf">[문서]유전자 변이 기반 암종 분류</a>
             </p>
           </div>
           <div class="portfolio-card">
@@ -469,7 +471,13 @@
             <p>2026.08~2026.09</p>
             <p>RxVita는 처방약, 영양제의 복약알림과 진료기록을 기반으로한 챗봇, 그리고 생활습관 개선을 위한 챌린지까지 한번에 관리할 수 있는 통합 관리 서비스입니다.<br/>
             <a id="rxvita_demo" target="_blank" href="https://api.rxvita.p-e.kr/demo">https://api.rxvita.p-e.kr/demo (데모버전)</a><br/>
-            <a id="rxvit" target="_blank" href="https://api.rxvita.p-e.kr/">https://api.rxvita.p-e.kr/</a>
+            <a id="rxvit" target="_blank" href="https://api.rxvita.p-e.kr/">https://api.rxvita.p-e.kr/</a><br/>
+            <a id="rxvita_docs" target="_blank" href="./document/RxVita.pdf">[문서]RxVita_소개</a><br/>
+            <a
+              id="rxvita_video"
+              href="./document/RxVita_시연영상_다운로드.mp4"
+              download="RxVita_시연영상.mp4"
+            >RxVita 시연영상 재생</a>
             </p>
           </div>          
         </div>
@@ -477,5 +485,33 @@
 
     </article>
   </main>
+  <script>
+    (() => {
+      const sidebarLinks = [...document.querySelectorAll('.sidebar a[href^="#"]')];
+
+      const syncActiveSidebarLink = (hash = window.location.hash) => {
+        const activeHash = sidebarLinks.some((link) => link.hash === hash) ? hash : '#resume';
+
+        sidebarLinks.forEach((link) => {
+          const isActive = link.hash === activeHash;
+          link.classList.toggle('active', isActive);
+
+          if (isActive) {
+            link.setAttribute('aria-current', 'page');
+          } else {
+            link.removeAttribute('aria-current');
+          }
+        });
+      };
+
+      sidebarLinks.forEach((link) => {
+        link.addEventListener('click', () => syncActiveSidebarLink(link.hash));
+      });
+
+      window.addEventListener('hashchange', () => syncActiveSidebarLink());
+      syncActiveSidebarLink();
+
+    })();
+  </script>
 </body>
 </html>

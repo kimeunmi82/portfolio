@@ -109,10 +109,12 @@ main {
 }
 
 .profile-img {
-    width: 116px;
-    height: 116px;
-    flex: 0 0 116px;
-    border-radius: 50%;
+    width: 30mm;
+    height: 40mm;
+    flex: 0 0 30mm;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 0;
     border: 4px solid #eeeeee;
     position: relative;
     overflow: hidden;
