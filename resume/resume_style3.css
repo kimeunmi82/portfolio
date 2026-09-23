@@ -291,6 +291,12 @@ li {
     border-radius: 14px;
     padding: 20px;
     background: #ffffff;
+    transition: background-color 180ms ease, border-color 180ms ease;
+}
+
+.portfolio-card:hover {
+    background-color: var(--chip);
+    border-color: var(--chip-text);
 }
 
 .portfolio-card-link {
@@ -304,7 +310,7 @@ li {
 .portfolio-card-link:hover,
 .portfolio-card-link:focus-visible {
     color: inherit;
-    border-color: #4da3ff;
+    border-color: var(--chip-text);
     box-shadow: 0 12px 24px rgba(31, 83, 132, 0.12);
     outline: none;
     transform: translateY(-3px);

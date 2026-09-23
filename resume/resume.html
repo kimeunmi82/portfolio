@@ -6,6 +6,7 @@
   <title>KIM EUN-MI Resume</title>
   
   <link rel="stylesheet" href="./resume_style3.css">
+  <link rel="stylesheet" href="./popup/popup.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     
@@ -409,10 +410,13 @@
             <div class="date">1998.03 ~ 2001.02</div>
             <div>서울 사대부고</div>
           </div>
-
           <div class="simple-row">
             <div class="date">2001.03 ~ 2005.02</div>
             <div>성결대학교 (전자상거래 | 인터넷정보공학)</div>
+          </div>
+          <div class="simple-row">
+            <div class="date">2026.04 ~ 2026.09</div>
+            <div>헬스케어 데이터 기반 인공지능 디지털 의료 웹 서비스 개발자 양성과정</div>
           </div>
         </div>
       </section>
@@ -430,19 +434,15 @@
       <section class="portfolio" id="portfolio">
         <h2 class="section-title">Portfolio</h2>
         <div class="portfolio-grid">
-          <div class="portfolio-card">
+          <div class="portfolio-card pf-trigger" data-pf-modal="smoking-modal" role="button" tabindex="0" aria-haspopup="dialog">
             <h3>흡연 여부 데이터 분석</h3>
             <p>2026.04~2026.04</p>
-            <p>흡연여부 데이터 분석을 통해 건강 인사이트를 도출하는 프로젝트<br/>
-              <a id="backoffice_docs" target="_blank" href="./document/흡연여부_데이터분석.pdf">[문서]흡연여부_데이터분석</a>
-            </p>
+            <p>건강검진 데이터에서 흡연자와 비흡연자의 건강 지표를 통계적으로 검증해, 흡연을 드러내는 5가지 핵심 생체 지표를 찾아낸 분석 프로젝트</p>
           </div>
-          <div class="portfolio-card">
+          <div class="portfolio-card pf-trigger" data-pf-modal="infertility-modal" role="button" tabindex="0" aria-haspopup="dialog">
             <h3>[해커톤] 난임 환자 대상 임신 성공 여부 예측 AI 모델 개발</h3>
             <p>2026.05~2026.05</p>
-            <p>난임 환자 데이터를 분석하여 임신 성공에 영향을 미치는 주요 요인을 도출하고, 정확한 예측을 위한 최적의 AI 모델을 개발하는 프로젝트<br/>
-              <a id="infertility_docs" target="_blank" href="./document/난임예측.pdf">[문서]난임예측</a>
-            </p>
+            <p>25만 건의 난임 시술 데이터에서 그룹별 실제 성공률을 역분석해 141개 피처를 설계하고, 다양성 중심 앙상블로 임신 성공 확률을 예측해 ROC-AUC 0.7424를 달성한 모델</p>
           </div>
 
           <div class="portfolio-card">
@@ -450,35 +450,21 @@
             <p>2026.06~2026.06</p>
             <p>흉부 X-ray 이미지를 활용한 폐렴 분류 AI 해커톤</p>
           </div>
-          <div class="portfolio-card">
+          <div class="portfolio-card pf-trigger" data-pf-modal="pneumonia-modal" role="button" tabindex="0" aria-haspopup="dialog">
             <h3>폐렴 환자 관리 백오피스 구축</h3>
             <p>2026.07~2026.07</p>
-            <p>흉부 X-Ray 이미지 기반의 폐렴 판독 모델을 활용한 '폐렴 환자 관리 백오피스' 구축 프로젝트<br/>
-            <a id="backoffice" target="_blank" href="https://github.com/kimeunmi82/Oz_codingSchool">[Git]폐렴환자관리_백오피스</a><br/>
-            <a id="backoffice_docs" target="_blank" href="./document/폐렴환자관리_백오피스.pdf">[문서]폐렴환자관리_백오피스</a><br/>
-            </p>
+            <p>흉부 X-Ray를 업로드하면 AI가 폐렴 여부와 Heatmap 근거를 제시하고, 역할·부서별 권한으로 환자와 진료기록을 관리하는 FastAPI 기반 의료 백오피스</p>
           </div>
 
-          <div class="portfolio-card">
+          <div class="portfolio-card pf-trigger" data-pf-modal="cancer-modal" role="button" tabindex="0" aria-haspopup="dialog">
             <h3>[해커톤] 암환자 유전체 데이터의 변이 정보를 활용한 암종 분류 AI 모델 개발</h3>
             <p>2026.08~2026.08</p>
-            <p>유전자 변이 정보 기반 암 아형(서브타입) 예측 AI 알고리즘 개발<br/>
-              <a id="hackathon_cancer" target="_blank" href="./document/유전자 변이 기반 암종 분류.pdf">[문서]유전자 변이 기반 암종 분류</a>
-            </p>
+            <p>희소한 유전자 변이 문자열을 텍스트(TF-IDF)·구조 피처·혼동쌍 전문가 모델로 함께 해석하고, 모델 간 불일치를 활용한 선택적 보정(VoteSelect)으로 26개 암종을 분류한 AI 모델</p>
           </div>
-          <div class="portfolio-card">
+          <div class="portfolio-card pf-trigger" data-pf-modal="rxvita-modal" role="button" tabindex="0" aria-haspopup="dialog">
             <h3>진료 기록 기반 복약 안내 및 생활 습관 개선 가이드 자동 생성 시스템 개발</h3>
             <p>2026.08~2026.09</p>
-            <p>RxVita는 처방약, 영양제의 복약알림과 진료기록을 기반으로한 챗봇, 그리고 생활습관 개선을 위한 챌린지까지 한번에 관리할 수 있는 통합 관리 서비스입니다.<br/>
-            <a id="rxvita_demo" target="_blank" href="https://api.rxvita.p-e.kr/demo">https://api.rxvita.p-e.kr/demo (데모버전)</a><br/>
-            <a id="rxvit" target="_blank" href="https://api.rxvita.p-e.kr/">https://api.rxvita.p-e.kr/</a><br/>
-            <a id="rxvita_docs" target="_blank" href="./document/RxVita.pdf">[문서]RxVita_소개</a><br/>
-            <a
-              id="rxvita_video"
-              href="./document/RxVita_시연영상_다운로드.mp4"
-              download="RxVita_시연영상.mp4"
-            >RxVita 시연영상 재생</a>
-            </p>
+            <p>약봉투를 촬영하면 OCR로 약을 자동 등록하고, 복약 알림 · 근거 기반 RAG 챗봇 · AI 보고서 · 생활습관 챌린지까지 한 번에 관리하는 헬스케어 서비스 (AWS 실서비스 배포)</p>
           </div>          
         </div>
       </section>
@@ -512,6 +498,14 @@
       syncActiveSidebarLink();
 
     })();
+
   </script>
+  <!-- 포트폴리오 팝업 -->
+  <script src="./popup/smoking_popup.js"></script>
+  <script src="./popup/infertility_popup.js"></script>
+  <script src="./popup/pneumonia_popup.js"></script>
+  <script src="./popup/cancer_popup.js"></script>
+  <script src="./popup/rxvita_popup.js"></script>
+  <script src="./popup/popup.js"></script>
 </body>
 </html>
