@@ -149,3 +149,21 @@ body.pf-lock { overflow: hidden; }
     .pf-kpi strong { font-size: 26px; }
     .pf-stack div { grid-template-columns: 1fr; gap: 2px; }
 }
+
+/* 카드 우측 하단 '자세히 보기' 아이콘 */
+.portfolio-card.pf-trigger { position: relative; padding-bottom: 48px; }
+.pf-more {
+    position: absolute; right: 16px; bottom: 14px;
+    display: inline-flex; align-items: center; gap: 6px;
+    color: #2f6da8; font-size: 13px; font-weight: 800;
+    transition: gap 180ms ease, color 180ms ease;
+}
+.pf-more svg { transition: transform 180ms ease; }
+.pf-trigger:hover .pf-more,
+.pf-trigger:focus-visible .pf-more { color: #1f5384; gap: 8px; }
+.pf-trigger:hover .pf-more svg,
+.pf-trigger:focus-visible .pf-more svg { transform: translateX(2px); }
+@media print {
+    .pf-more { display: none; }
+    .portfolio-card.pf-trigger { padding-bottom: 20px; }
+}

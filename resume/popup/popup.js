@@ -17,6 +17,14 @@
     const modal = document.getElementById(trigger.dataset.pfModal);
     if (!modal || typeof modal.showModal !== 'function') return;
 
+    // 카드 우측 하단 '자세히 보기' 아이콘 (카드 클릭 시 함께 팝업 열림)
+    if (!trigger.querySelector('.pf-more')) {
+      trigger.insertAdjacentHTML('beforeend',
+        '<span class="pf-more" aria-hidden="true">자세히 보기' +
+        '<svg viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' +
+        '<circle cx="10" cy="10" r="8"/><path d="M8.5 6.5 12 10l-3.5 3.5"/></svg></span>');
+    }
+
     const open = () => {
       modal.showModal();
       document.body.classList.add('pf-lock');
